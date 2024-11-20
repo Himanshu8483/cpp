@@ -23,14 +23,14 @@
 // #include <iostream>
 // using namespace std;
 // int main () {
-//     int mrp;
-//     int discount, sp;
+//     int mrp, discount, sp;
+
 //     cout << " Enter Mark Price (Mrp) = " ;
 //     cin >> mrp;
 //     if ( mrp>=10000 && mrp<20000) {
 //         discount=(10*mrp)/100;
 //         sp=mrp-discount;
-//        cout << discount<<endl<<sp ; 
+//        cout << discount<<endl<<sp; 
 //     }
 //     else if ( mrp>=20000 && mrp<30000) {
 //         discount=(20*mrp)/100;
@@ -82,7 +82,7 @@ int main () {
     cout << "enter your choice 1 for international and 2 for domestic = ";
     cin >> choice;
     if (choice==1) {
-        cout << "Choice 1 for us and choice 2 for uk";
+        cout << "Choice 1 for us and choice 2 for uk = ";
         cin >> choice;
         if (choice == 1) {
             cout << "the price of us visit is 15000";
@@ -90,18 +90,25 @@ int main () {
         else if (choice == 2) {
             cout << "the price of uk visit is 12000";
         }
-    }
-    else if (choice == 2) {
-        cout << "Choice 1 for India and choice 2 for Pakistan";
-        cin >> choice;
-        if (choice == 1) {
-            cout << "the price of India visit is 1100";
-        }
-        else if (choice == 2) {
-            cout << "the price of Pakistan visit is 900";
-        }
-    else {
+        else {
         cout << "wrong input";
     }
+    }
+    else if (choice == 2) {
+        cout << "Choice 1 for India and choice 2 for Pakistan = ";
+        cin >> choice;
+        if (choice == 1) {
+            cout << "the price of India visit is 11000";
+        }
+        else if (choice == 2) {
+            cout << "the price of Pakistan visit is 9000";
+        }
+        else {
+        cout << "wrong input";
+    
+    }
+    }
+    else {
+        cout << "wrong input";
     }
 }
