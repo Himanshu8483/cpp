@@ -82,10 +82,10 @@ int main () {
     cout << "enter your choice 1 for international and 2 for domestic = ";
     cin >> choice;
     if (choice==1) {
-        cout << "Choice 1 for us and choice 2 for uk = ";
+        cout << "Choice 1 for usa and choice 2 for uk = ";
         cin >> choice;
         if (choice == 1) {
-            cout << "the price of us visit is 15000";
+            cout << "the price of usa visit is 15000";
         }
         else if (choice == 2) {
             cout << "the price of uk visit is 12000";
