@@ -1,78 +1,78 @@
 // traffic light
-// #include <iostream>
-// using namespace std;
-// int main () {
-//     int num;
-//     cout << " Enter Number = " ;
-//     cin >> num;
-//     if ( num==1) {
-//        cout << "yellow" ; 
-//     }
-//     else if (num==2) {
-//         cout << "red" ;
-//     }
-//     else if (num==3) {
-//         cout << "orange" ;
-//     }
-//     else {
-//         cout << "wrong number" ;
-//     }
-// } 
+#include <iostream>
+using namespace std;
+int main () {
+    int num;
+    cout << " Enter Number = " ;
+    cin >> num;
+    if ( num==1) {
+       cout << "yellow" ; 
+    }
+    else if (num==2) {
+        cout << "red" ;
+    }
+    else if (num==3) {
+        cout << "orange" ;
+    }
+    else {
+        cout << "wrong number" ;
+    }
+} 
 
 // 10k to 20k D=10% 20k to 30k D=20% 30k to 40k D=40%
-// #include <iostream>
-// using namespace std;
-// int main () {
-//     int mrp, discount, sp;
+#include <iostream>
+using namespace std;
+int main () {
+    int mrp, discount, sp;
 
-//     cout << " Enter Mark Price (Mrp) = " ;
-//     cin >> mrp;
-//     if ( mrp>=10000 && mrp<20000) {
-//         discount=(10*mrp)/100;
-//         sp=mrp-discount;
-//        cout << discount<<endl<<sp; 
-//     }
-//     else if ( mrp>=20000 && mrp<30000) {
-//         discount=(20*mrp)/100;
-//         sp=mrp-discount;
-//        cout << discount<<endl<<sp ; 
-//     }
-//     else if ( mrp>=30000 && mrp<40000) {
-//         discount=(40*mrp)/100;
-//         sp=mrp-discount;
-//        cout << "discount = " << discount<<endl<<"selling price = " << sp ; 
-//     }
-//     else {
-//         cout << "wrong mrp" ;
-//     }
-// } 
+    cout << " Enter Mark Price (Mrp) = " ;
+    cin >> mrp;
+    if ( mrp>=10000 && mrp<20000) {
+        discount=(10*mrp)/100;
+        sp=mrp-discount;
+       cout << discount<<endl<<sp; 
+    }
+    else if ( mrp>=20000 && mrp<30000) {
+        discount=(20*mrp)/100;
+        sp=mrp-discount;
+       cout << discount<<endl<<sp ; 
+    }
+    else if ( mrp>=30000 && mrp<40000) {
+        discount=(40*mrp)/100;
+        sp=mrp-discount;
+       cout << "discount = " << discount<<endl<<"selling price = " << sp ; 
+    }
+    else {
+        cout << "wrong mrp" ;
+    }
+} 
 
 // swiping 3variables
-// #include <iostream>
-// using namespace std;
-// int main () {
-//     int a = 10;
-//     int b = 12;
-//     int temp;
+#include <iostream>
+using namespace std;
+int main () {
+    int a = 10;
+    int b = 12;
+    int temp;
 
-//     temp = b;
-//     b = a;
-//     a = temp;
-//     cout << a << endl << b;
-// }
+    temp = b;
+    b = a;
+    a = temp;
+    cout << a << endl << b;
+}
 // swiping 2 variables
-// #include <iostream>
-// using namespace std;
-// int main () {
-//     int a = 10;
-//     int b = 12;
-//     int temp;
+#include <iostream>
+using namespace std;
+int main () {
+    int a = 10;
+    int b = 12;
+    int temp;
 
-//     a = a + b;
-//     b = a- b;
-//     a = a - b;
-//     cout << a << endl << b;
-// }
+    a = a + b;
+    b = a- b;
+    a = a - b;
+    cout << a << endl << b;
+}
 
 // tour visit
 #include <iostream>
