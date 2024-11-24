@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     int a;
     int b;
-    cout<< "enter values = ";
+    cout<< "enter values =  ";
     cin>>a>>b;
     // cout<<(a+=b)<<endl;
     // cout<<(a-=b)<<endl;
