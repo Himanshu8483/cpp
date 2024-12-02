@@ -58,12 +58,11 @@
 #include <iostream>
 using namespace std;
 
-int main() { 
-    int num = 111;
-    int rb = 0;
-    while (num != 0) {
-        rb = rb*10 + (num%10);
-        num = num / 10;
+int main() {
+    int n = 5; 
+    int rb = 1;
+    for (int i = 1; i <= n; i++) {
+        cout << rb << endl;
+        rb = rb * 10 + 1;
     }
-    cout <<num;
 }
