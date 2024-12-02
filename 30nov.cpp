@@ -22,7 +22,7 @@
 //     }          
 //     cout<< sum << endl;
 // }
-// power sum of numbers 
+// power calculate of numbers 
 // #include <iostream>
 // using namespace std;
 
@@ -73,11 +73,11 @@ int main() {
                 counter++;
             }
     }
-            if(counter==2)
-            {
-                cout<<"prime";
-            }
-            else {
-                cout<<"not";
-            }      
+        if(counter==2)
+        {
+            cout<<"prime";
+        }
+        else {
+            cout<<"not";
+        }      
 }
