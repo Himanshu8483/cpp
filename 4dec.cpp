@@ -112,7 +112,7 @@ int main()
 int main(){
 	float me = 5.25;
 	double you = 5.25;
-	if(me == you)
+	if(me == you) // exception data type
 		cout<<"matched";
 	else
 	return 0;
