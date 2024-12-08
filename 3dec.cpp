@@ -98,10 +98,10 @@ int main() {
         rs=rs%2;
     }
     if ( rs>=1) {
-        cout << "1 notes = " << rs/1 << endl;
+        cout << "1 notes =" << rs/1 << endl;
         rs=rs%1;
     }
     else {
-        cout << "wrong input";
+        cout << "wrong input ";
     }
 }
