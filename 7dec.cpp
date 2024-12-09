@@ -23,7 +23,7 @@
 using namespace std;
 
 int main() { 
-    int num = 1;
+    int num = 153;
     int ans = num;
     int rb = 0;
     int sum = 0;
@@ -42,6 +42,4 @@ int main() {
     else {
         cout<< "no";
     }
-
-
 }
