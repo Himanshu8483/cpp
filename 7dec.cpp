@@ -31,8 +31,6 @@ int main() {
     {
         rb = (num%10);
         sum += rb* rb * rb;
-
-
     }
         cout << sum << endl;
 

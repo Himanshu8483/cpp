@@ -152,7 +152,7 @@ int main() {
     for (; num!=0; num/=10)
     {
         rb = rb*10 + (num%10);
-    }     or     
+    }   //  or     
     int num = 123;
     int rb = 0;
     for (; num!=0;)
