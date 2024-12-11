@@ -20,11 +20,12 @@
 using namespace std;
 int main() {
 int n=5;
-int a=2;
+int a=3;
 int r=3;
 for(int i=0;i<n;++i)
 {
-    cout<<a << "    ";    
-    a=a*r;
+    cout<<a<<"  ";
+        a*=r; 
     }
 }
+
