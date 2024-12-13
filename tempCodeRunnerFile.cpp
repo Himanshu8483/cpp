@@ -1,8 +1,11 @@
- int main(){
-// 	int i = 0, j = 0;
-// 		if(--i== j++)
-// 			cout<< i--<<","<< j--;
-// 		else
-// 			cout<<i<<j;
-// 		return 0;
-// }
+    for(int r=1; r<=5; ++r) {
+        for(int c=1; c<=5; ++c){
+            if (c<=6-r) {
+            cout<<"*";
+            }
+            else{
+            cout<<" ";
+            }
+        }
+        cout<<endl;
+    }

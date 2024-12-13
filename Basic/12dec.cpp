@@ -13,7 +13,6 @@ int main() {
     // cout<< rb << endl;
     for (; rb!=0; rb=rb/10) {
         dig=rb%10;
-   
     switch(dig){
         case 1 : 
         cout<< "one " ;
