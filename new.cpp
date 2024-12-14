@@ -71,7 +71,7 @@ int main() {
     int a=0;
     for(int r=1; r<=9; ++r) {
         (r<=5) ? a++ : a--;
-
+        cout <<"value of a = "<< a<<"\t";
         for(int c=1; c<=9; ++c){
             if (c>=6-a && c<=4+a) {
             cout<<"*";
@@ -82,8 +82,4 @@ int main() {
         }
         cout<<endl;
     }
-
-
-
-
 }
