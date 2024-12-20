@@ -36,65 +36,63 @@ int main() {
     //     if(arr[i]!=3)
     //     cout<<arr[i]<<" ";      // 9 12 4 5 
     // }
-    // hiding and give new array
-    // int arr[]= {1,2,3,4,5};
-    // int j=0;
-    // for(int i=0;i<5;++i){
-    //     if(arr[i]!=3)
-    //     {
-    //         arr[j]=arr[i];
-    //         j++;
-    //     }
-    // }
-    // cout<< arr[3]<<endl;    // 5 
-    // cout<< arr[4]<<endl;    // 5
+    // hiding and give new array (value 3 hide)
+    int arr[]= {1,2,3,4,6};
+    int j=0;
+    for(int i=0;i<5;++i){
+        if(arr[i]!=3)
+        {
+            arr[j]=arr[i];
+            // cout<<"value of j = "<< j<<" ";     // 0 1 2 3
+            // cout<<"value of i = " << i<<" ";       // 0 1 3 4
+            j++;
+        }
+    }
+    // cout<< arr[3]<<endl;    // 6
+    // cout<< arr[4]<<endl;    // 6
     // for(int i=0; i<j; ++i){
-    //     cout<<arr[i]<<" ";      // 1 2 4 5
+    //     cout<<arr[i]<<" ";      // 1 2 4 6
+    // }
+    // for(int i=0; i<=j; ++i){
+    //     cout<<arr[i]<<" ";      // 1 2 4 6 6
     // }
     // cout<<endl;
-    // hiding and give new array
-//     int arr[]= {1,2,3,4,5};
-//     int j=0;
-//     for(int i=0;i<=5;++i){
-//         if(arr[i]!=3)
-//         {
-//             arr[j]=arr[i];
-//             j++;
+// // comparision 
+//     int arr1[]={1,1,1,1,5};
+//     for(int i=0;i<5;++i) {
+//         for(int j=i+1;j<5;++j) {
+//             if(arr1[j]==arr1[i])
+//             {
+//                 cout<<arr1[i]<<" ";     // 1 1 1 1 1 1
+//             }
 //         }
 //     }
-//     cout<< arr[3]<<endl;    // 5 
-//     cout<< arr[4]<<endl;    // garbage value (6422280)
-//     for(int i=0; i<5; ++i){
-//         cout<<arr[i]<<" ";      // 1 2 4 5 
-//     }
-//     cout<<endl;
-// // comparision 
-    // int arr1[]={1,1,1,1,5};
-    // for(int i=0;i<5;++i) {
-    //     for(int j=i+1;j<5;++j) {
-    //         if(arr1[j]==arr1[i])
-    //         {
-    //             cout<<arr1[i]<<" ";     // 1 1 1
-    //         }
-    //     }
-    // }
-// max
-    int arr1[]={17,63,4,22,30};
-    int max=arr1[0];
-    for(int i=1;i<5;++i) {
-        if(max<arr1[i])
-                // max=arr1[i+1];
-                max=arr1[i];
-        }
-        cout<<max<<" ";     // 22
 // sum 
     // int sum=0;
     // int arr1[]={1,1,1,4,5};
     // for(int i=0;i<5;++i){
-    //     sum=sum-arr1[i];
+    //     sum=sum+arr1[i];
     // }
-    // cout<<"Total sum of array = "<<sum;
+    // cout<<"Total sum of array = "<<sum;     // Total sum of array = 12
 
-
+// // maximum
+    int arr1[]={17,63,63,22,30};
+    int max=arr1[0];
+//     for(int i=0;i<5;++i) {
+//         if(max<arr1[i])
+//                 max=arr1[i];
+//         }
+//         cout<<"Maximum Value = "<< max<<endl;     // 63
+// // minimum
+//     for(int i=0;i<5;++i) {
+//         if(max>arr1[i])
+//                 max=arr1[i];
+//         }
+//         cout<<"Minimum Value = "<<max<<" ";     // 4
+// // duplicate remove
+    for(int i=0;i<5;++i) {
+        if(arr1[i]!=arr1[i+1])
+                cout<< arr1[i] << " ";  // 17 63 22 30
+        }
 }
 
