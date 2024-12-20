@@ -37,17 +37,17 @@ int main() {
     //     cout<<arr[i]<<" ";      // 9 12 4 5 
     // }
     // hiding and give new array (value 3 hide)
-    int arr[]= {1,2,3,4,6};
-    int j=0;
-    for(int i=0;i<5;++i){
-        if(arr[i]!=3)
-        {
-            arr[j]=arr[i];
-            // cout<<"value of j = "<< j<<" ";     // 0 1 2 3
-            // cout<<"value of i = " << i<<" ";       // 0 1 3 4
-            j++;
-        }
-    }
+    // int arr[]= {1,2,3,4,6};
+    // int j=0;
+    // for(int i=0;i<5;++i){
+    //     if(arr[i]!=3)
+    //     {
+    //         arr[j]=arr[i];
+    //         // cout<<"value of j = "<< j<<" ";     // 0 1 2 3
+    //         // cout<<"value of i = " << i<<" ";       // 0 1 3 4
+    //         j++;
+    //     }
+    // }
     // cout<< arr[3]<<endl;    // 6
     // cout<< arr[4]<<endl;    // 6
     // for(int i=0; i<j; ++i){
@@ -76,23 +76,45 @@ int main() {
     // cout<<"Total sum of array = "<<sum;     // Total sum of array = 12
 
 // // maximum
-    int arr1[]={17,63,63,22,30};
-    int max=arr1[0];
+// int arrr[]= {1,3,4,5,8};
+//     for(int i=0;i<5;++i) {
+//         if(arr[i]>arr[i+1]){
+//         cout<<"Max Value = "<< arr[i]<<endl;    
+//         }
+//     }
+    // int arr1[]={17,63,63,22,30};
+    // int max=arr1[3];
 //     for(int i=0;i<5;++i) {
 //         if(max<arr1[i])
 //                 max=arr1[i];
 //         }
 //         cout<<"Maximum Value = "<< max<<endl;     // 63
-// // minimum
+// // // minimum
 //     for(int i=0;i<5;++i) {
 //         if(max>arr1[i])
 //                 max=arr1[i];
 //         }
-//         cout<<"Minimum Value = "<<max<<" ";     // 4
-// // duplicate remove
+//         cout<<"Minimum Value = "<<max<<" ";     // 17
+// // // duplicate remove
+//     for(int i=0;i<5;++i) {
+//         if(arr1[i]==arr1[i+1])
+//                 cout<< arr1[i] << " ";  // 17 63 22 30
+//         }
+// // duplicate print
+    int arr1[]={82,82,63,82,63};
     for(int i=0;i<5;++i) {
-        if(arr1[i]!=arr1[i+1])
-                cout<< arr1[i] << " ";  // 17 63 22 30
+        bool dup = false;       // let start with zero duplicate
+        for(int j=i+1;j<5;++j) {
+        if(arr1[i]==arr1[j] && arr1[i]!=-1){
+            arr1[j]=-1;         // take any value that's not in array
+            dup = true;
+            }
+
         }
-}
+        if(dup){
+            
+        cout<<arr1[i] << " ";
+    }
+
+}}
 
