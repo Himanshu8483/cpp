@@ -96,9 +96,9 @@
 //     }
 // }
 
-#include <iostream>
-using namespace std;
-int main() {
+// #include <iostream>
+// using namespace std;
+// int main() {
     // int arr[]={82,82,63,82,62, 62, 22,};
     // // duplicate and unique value print (proper work)
     // for(int i=0;i<7;++i) {
@@ -146,12 +146,61 @@ int main() {
 //     }
 
 // max 3
-    int arr[]={17,63,63,22,17};
-    int max=arr[3];
-    for(int i=0;i<5;++i) {
-        if(max<arr[i])
-                max=arr[i];
+//     int arr[]={17,63,63,22,17};
+//     int max=arr[3];
+//     for(int i=0;i<5;++i) {
+//         if(max<arr[i])
+//                 max=arr[i];
+//         }
+//         cout<<"Maximum Value = "<< max<<endl;     // 63
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int arr[] = {103, 78, 63, 22, 78};
+
+//     // Find the maximum 3 value
+//     int max1 = 0;
+//     int max2 = 0;
+//     int max3 = 0;
+//     for (int i = 0; i < 5; ++i) {
+//         for (int j = 0; j < 5; ++j) {
+//             if (arr[j] > max1) {
+//                 max1 = arr[j];
+//             }
+//             else if (arr[j] > max2 && arr[j] < max1) {
+//                 max2 = arr[j];
+//             }
+//             else if (arr[j] > max3 && arr[j] < max2) {
+//                 max3 = arr[j];
+//             }
+//         }
+//     }
+//     cout << "Maximum Value = " << max1 << endl;
+//     cout << "Second Maximum Value = " << max2 << endl;
+//     cout << "Third Maximum Value = " << max3 << endl;
+// }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {103, 79, 63, 22, 78};
+
+    // Find the kth largest number for non duplicate value
+    int k=3;
+    for(int i = 0; i < 5/2; ++i) {
+        for (int j = i+1; j < 5; ++j) {
+            if (arr[j] > arr[i]) {
+                int temp = arr[i];  // swap
+                arr[i] = arr[j];    
+                arr[j] = temp;
+            }
         }
-        cout<<"Maximum Value = "<< max<<endl;     // 63
+    }
+        for(int i=0;i<5;++i) {
+    cout<< arr[i]<< " ";
+}
 }
 
