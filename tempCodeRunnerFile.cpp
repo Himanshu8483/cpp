@@ -1,3 +1,3 @@
-        if(arr[i]!=-1){       
-        cout<<"the frequency of "<<arr[i] <<" is "<< count<< endl;
-        }
+        for(int i=0;i<5;++i) {
+    cout<< arr[i]<< " ";
+}

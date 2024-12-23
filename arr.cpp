@@ -182,25 +182,47 @@
 //     cout << "Second Maximum Value = " << max2 << endl;
 //     cout << "Third Maximum Value = " << max3 << endl;
 // }
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int arr[] = {103, 79, 63, 22, 78};
+
+//     // Find the kth largest number for non duplicate value
+//     int k=3;
+//     for(int i = 0; i < 5; ++i) {
+//         for (int j = i+1; j < 5; ++j) {
+//             if (arr[j] > arr[i]) {
+//                 int temp = arr[i];  // swap
+//                 arr[i] = arr[j];    
+//                 arr[j] = temp;
+//             }
+//         }
+//     }
+//         cout<<arr[k-1];
+
+// }
 #include <iostream>
 using namespace std;
 
 int main() {
     int arr[] = {103, 79, 63, 22, 78};
-
-    // Find the kth largest number for non duplicate value
-    int k=3;
+    // int arr[] = {11,13,13,10,9};
+// reverse of array 
+// for (int i =4; i>=0; --i){
+//     cout<<arr[i]<< " ";
+// }
     for(int i = 0; i < 5/2; ++i) {
         for (int j = i+1; j < 5; ++j) {
-            if (arr[j] > arr[i]) {
+            if (arr[i] > arr[j]) {
                 int temp = arr[i];  // swap
                 arr[i] = arr[j];    
                 arr[j] = temp;
             }
         }
     }
-        for(int i=0;i<5;++i) {
-    cout<< arr[i]<< " ";
-}
+    for(int i=0;i<5;++i) {
+        cout<< arr[i]<< " ";
+    }
 }
 
