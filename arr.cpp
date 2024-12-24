@@ -202,41 +202,56 @@
 //         cout<<arr[k-1];
 
 // }
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int main() {
-    int arr[] = {103, 79, 63, 22, 78};
-    // int arr[] = {11,13,13,10,9};
-// reverse of array 
-// for (int i =4; i>=0; --i){
-//     cout<<arr[i]<< " ";
+// int main() {
+//     int arr[] = {103, 79, 63, 22, 78};
+//     // int arr[] = {11,13,13,10,9};
+// // reverse of array 
+// // for (int i =4; i>=0; --i){
+// //     cout<<arr[i]<< " ";
+// // }
+//     for(int i = 0; i < 5/2; ++i) {
+//         for (int j = i+1; j < 5; ++j) {
+//             if (arr[i] > arr[j]) {
+//                 int temp = arr[i];  // swap
+//                 arr[i] = arr[j];    
+//                 arr[j] = temp;
+//             }
+//         }
+//     }
+//     for(int i=0;i<5;++i) {
+//         cout<< arr[i]<< " ";
+//     }
 // }
-    for(int i = 0; i < 5/2; ++i) {
-        for (int j = i+1; j < 5; ++j) {
-            if (arr[i] > arr[j]) {
-                int temp = arr[i];  // swap
-                arr[i] = arr[j];    
-                arr[j] = temp;
-            }
-        }
-    }
-    for(int i=0;i<5;++i) {
-        cout<< arr[i]<< " ";
-    }
-}
+// #include <iostream>
+// using namespace std;
+// int main() {
+//    // missing value find
+//     int arr[]= {11,12,14,16,30};
+//     int j=0;
+//     for(int i=0;i<5;++i) {
+//         if(arr[i+1]-arr[i]>1){
+//             for(int j=arr[i]+1;j<arr[i+1];++j){
+//             cout<<j<<" ";       // 13 15 17 18 19 20 21 22 23 24 25 26 27 28 29 
+                
+//             }
+//         }
+//     }
+// }
 #include <iostream>
 using namespace std;
 int main() {
    // missing value find
     int arr[]= {11,12,14,16,30};
-    int j=0;
+    int target=16;      // yes
+    int target=21;      // no
     for(int i=0;i<5;++i) {
-        if(arr[i+1]-arr[i]>1){
-            for(int j=arr[i]+1;j<arr[i+1];++j){
-            cout<<j<<" ";       // 13 15 17 18 19 20 21 22 23 24 25 26 27 28 29 
-                
+        if(arr[i]==target){
+            cout<<"yes";
+            return 0;
             }
         }
+        cout<<"no";
     }
-}
