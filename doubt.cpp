@@ -1,29 +1,6 @@
 
 
-#include <iostream>
-using namespace std;
-int main() {
-   // hiding and give new array (value 3 hide)
-    int arr[]= {1,2,3,4,6};
-    int j=0;
-    for(int i=0;i<5;++i) {
-        if(arr[i]!=3) {
-            arr[j]=arr[i];
-            // cout<<"value of j = "<<j<<" ";     // 0 1 2 3
-            // cout<<"value of i = " <<i<<" ";    // 0 1 3 4
-            j++;
-        }
-    }
-    cout<< arr[3]<<endl;    // 6
-    cout<< arr[4]<<endl;    // 6
-    for(int i=0; i<j; ++i) {
-        cout<<arr[i]<<" ";      // 1 2 4 6
-    }
-    for(int i=0; i<=j; ++i){
-        cout<<arr[i]<<" ";      // 1 2 4 6 6
-    }
-    cout<<endl;
-}
+
 
 // #include <iostream>
 // using namespace std;

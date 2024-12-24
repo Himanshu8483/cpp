@@ -225,4 +225,18 @@ int main() {
         cout<< arr[i]<< " ";
     }
 }
-
+#include <iostream>
+using namespace std;
+int main() {
+   // missing value find
+    int arr[]= {11,12,14,16,30};
+    int j=0;
+    for(int i=0;i<5;++i) {
+        if(arr[i+1]-arr[i]>1){
+            for(int j=arr[i]+1;j<arr[i+1];++j){
+            cout<<j<<" ";       // 13 15 17 18 19 20 21 22 23 24 25 26 27 28 29 
+                
+            }
+        }
+    }
+}
