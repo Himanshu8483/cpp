@@ -228,6 +228,19 @@
 // #include <iostream>
 // using namespace std;
 // int main() {
+//    // for only difference 1 value missing
+//     int arr[]= {1,2,3,5,7};
+//     for(int i=0;i<5;++i) {
+//         if(arr[i+1]-arr[i]>1){
+//             cout<<arr[i]+1<<" ";       // 4 6
+                
+//             }
+//         }
+// }
+
+// #include <iostream>
+// using namespace std;
+// int main() {
 //    // missing value find
 //     int arr[]= {11,12,14,16,30};
 //     int j=0;
@@ -240,18 +253,21 @@
 //         }
 //     }
 // }
-#include <iostream>
-using namespace std;
-int main() {
-   // missing value find
-    int arr[]= {11,12,14,16,30};
-    int target=16;      // yes
-    int target=21;      // no
-    for(int i=0;i<5;++i) {
-        if(arr[i]==target){
-            cout<<"yes";
-            return 0;
-            }
-        }
-        cout<<"no";
-    }
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//    // value find in array
+//     int arr[]= {11,12,14,16,30};
+//     int target=16;      // yes
+//     // int target=21;      // no
+//     for(int i=0;i<5;++i) {
+//         if(arr[i]==target){
+//             cout<<"yes";
+//             return 0;
+//             }
+//         }
+//         cout<<"no";
+
+
+    // }
