@@ -10,7 +10,7 @@
 // // fixed size ===============
     // int arr[5]= {10,20,30,40,50};
     // cout<<arr[4]<<endl;     // 50
-    // cout<<arr[6];           // garbage value return when incorrect index
+    // cout<<arr[6];           // garbage value return when incorrect index written 
     // 
     // for(int i=0; i<5; ++i){
     //     cout<<arr[i] << " ";     // print array values

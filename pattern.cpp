@@ -15,6 +15,7 @@ int main() {
 //         cout<<endl;
 //     }
 // }
+
     // Left-Aligned Inverted Pyramid 
 //     for(int r=1; r<=5; ++r) {
 //         for(int c=1; c<=5; ++c){

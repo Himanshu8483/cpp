@@ -58,7 +58,7 @@ int main() {
 //     }
 //     cout<<"pallindrome";
 
-// remove all occurence 
+// // remove all occurence 
     int arr[]={1,2,1,3,2};
     for(int i=0; i<5;++i) {
         for(int j=i+1; j<5; ++j) {
@@ -72,4 +72,5 @@ int main() {
             cout<<arr[i] << " ";
         }
     }
+
 }
