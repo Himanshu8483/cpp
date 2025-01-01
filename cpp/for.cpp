@@ -1,5 +1,29 @@
+//  print no. 1 to 5
+//  do while loop 
+#include <iostream>
+using namespace std;
+int main() { 
+    int number=1;
+    do{
+        cout<< number << endl;
+        ++number;
+    }
+    while(number<=5);
+}
+
+// While Loop
+#include <iostream>
+using namespace std;
+int main() { 
+    int i = 1;
+    while(i<=5){
+        cout<< i << endl;
+        ++i;
+    }
+    cout << i;
+}
+
 // For Loop
-// print no. 1 to 5
 #include <iostream>
 using namespace std;
 int main() { 
