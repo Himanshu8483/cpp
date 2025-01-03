@@ -21,7 +21,7 @@ int main() {
     }
 }
 
-// Left-Aligned Inverted Pyramid 
+// Left-Aligned Pyramid 
 // *    
 // **
 // ***

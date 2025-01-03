@@ -1,4 +1,4 @@
-// int size = sizeof(arr) / sizeof(arr[0]);
+// int size = sizeof(arr) / sizeof(arr[0]);     // length of an array
 
 // variable size
 #include <iostream>
@@ -163,7 +163,7 @@ int main() {
         cout << arr[i] << " ";
     }
 
-// max 3
+// max
     int arr[]={17,63,63,22,17};
     int max=arr[3];
     for(int i=0;i<5;++i) {
@@ -220,25 +220,10 @@ int main() {
 #include <iostream>
 using namespace std;
 int main() {
-// reverse of array 
+// reverse printing not use
 int arr[] = {11,13,13,10,9};
     for (int i =4; i>=0; --i){
         cout<<arr[i]<< " ";
-    }
-
-// Ascending Order  by swaping
-    int arr[] = {103, 79, 63, 22, 78};
-    for(int i = 0; i < 5/2; ++i) {
-        for (int j = i+1; j < 5; ++j) {
-            if (arr[i] > arr[j]) {
-                int temp = arr[i];  // swap
-                arr[i] = arr[j];    
-                arr[j] = temp;
-            }
-        }
-    }
-    for(int i=0;i<5;++i) {
-        cout<< arr[i]<< " ";
     }
 }
 
@@ -260,7 +245,6 @@ int main() {
 using namespace std;
 int main() {
     int arr[]= {11,12,14,16,30};
-    int j=0;
     for(int i=0;i<5;++i) {
         if(arr[i+1]-arr[i]>1){
             for(int j=arr[i]+1;j<arr[i+1];++j){
@@ -323,7 +307,7 @@ int main() {
         cout<<arr[j]<<" ";
     }
 
-// reverse 
+// reverse swapping
     int arr[]={1,2,3,4,5};
     for (int i=0;i<5/2;++i){
         int temp;
