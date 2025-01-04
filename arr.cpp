@@ -331,10 +331,10 @@ int main() {
     }
     cout<<"pallindrome";
 
-// remove all duplicates
+// remove all duplicates 
     int arr[]={1,2,1,3,2};
     for(int i=0; i<5;++i) {
-        for(int j=i+1; j<5; ++j) {
+        for(int j=i+1; j<5; ++j){
             if(arr[i]==arr[j]){
                 arr[j]=-1;
             }

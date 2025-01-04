@@ -34,13 +34,13 @@ int main() {
     cout << i;
 }
 
-// 2 table print 
+// 3 table print 
 #include <iostream>
 using namespace std;
 int main() { 
-    int i=1;
-    for (i=1; i<=10; ++i){
-        cout<< 2* i << endl;
+    int num=3;
+    for (int i=1; i<=10; ++i){
+        cout<< num* i << endl;
     }   
 }
 
@@ -123,6 +123,25 @@ int main() {
             cout<< i << endl;
         } 
     }         
+}
+
+// prime no
+#include <iostream>
+using namespace std;
+int main() {
+    int num = 13;
+    if(num<2) {
+        cout << "Not a prime no";
+        return 0;
+    }
+    for(int i=2; i*i<=num; i++) {
+        if(num%i==0) {
+            cout<< "Not a prime no";
+            return 0;
+        }
+    }
+    cout<< "Prime Number" ;
+    return 0;
 }
 
 // prime number
@@ -474,25 +493,6 @@ int main()
 	return 0;
 }
 
-// prime no
-#include <iostream>
-using namespace std;
-int main() {
-    int num = 13;
-    if(num<2) {
-        cout << "Not a prime no";
-        return 0;
-    }
-    for(int i=2; i*i<=num; i++) {
-        if(num%i==0) {
-            cout<< "Not a prime no";
-            return 0;
-        }
-    }
-    cout<< "Prime Number" ;
-    return 0;
-}
-
 // amstrong no. 
 #include <iostream>
 using namespace std;
@@ -604,17 +604,17 @@ for(int i=0;i<n;++i) {
 }
 
 // number in letter 
-#include <iostream>
+#include <iostream> 
 using namespace std;
 int main() { 
-    int num = 1234;
-    int rb = 0;
     int dig = 0;
-    for (; num!=0; num/=10) {
-        rb = rb*10 + (num%10);
+    int num = 1234;  // Initial number
+    int rb = 0;  // Variable to store the reversed number
+    for (; num != 0; num /= 10) {
+        rb = rb * 10 + (num % 10);  // Reverse the number
     }
-    for (; rb!=0; rb=rb/10) {
-        dig=rb%10;
+    for (; rb!=0; rb=rb/10) {   
+        dig=rb%10;          // Extract the last digit
         switch(dig){
             case 1 : 
             cout<< "one " ;

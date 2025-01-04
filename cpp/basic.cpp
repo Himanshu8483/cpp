@@ -459,7 +459,7 @@ int main() {
         }
         else {
             cout << "wrong password try again";
-                    cin >> pass;
+            cin >> pass;
         if(pass==1234)
         {
             cout<<"open";
@@ -716,7 +716,7 @@ int main () {
     }
 } 
 
-//  1 for 2 variable swiping and 2 for 3variable swiping
+//  1 for 2 variable swiping and 2 for 3 variable swiping
 #include <iostream>
 using namespace std;
 int main () {
@@ -924,7 +924,7 @@ int main() {
     cout<< "enter salary = ";
     cin>> salary;
     if (salary == 20000) {
-        cout<< "enter person = ";
+        cout<< "enter person added = ";
         cin>> person;
         cout << salary + (incentive * person);
     }

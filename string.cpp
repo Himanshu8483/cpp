@@ -21,29 +21,6 @@ int main() {
     return 0;  // End of program
 }
 
-// Function to reverse a string
-#include <iostream>
-using namespace std;
-void rev(string str) {
-    int length = str.length();  // Find the length of the string
-    // Loop to swap characters from start to end
-    for (int i = 0; i < length / 2; ++i) {
-        char temp = str[i];  // Store the current character in a temporary variable
-        str[i] = str[length - i - 1];  // Swap the current character with the corresponding character from the end
-        str[length - i - 1] = temp;  // Complete the swap
-    }
-    // Print the reversed string
-    for (int i = 0; i < length; ++i) {
-        cout << str[i];
-    }
-}
-
-int main() {
-    string str = "welcome";  // Define a sample string to reverse
-    rev(str);  // Call the reverse function
-    return 0;
-}
-
 // Pallindrome check with function dynamically
 #include <iostream>
 using namespace std;
@@ -92,4 +69,27 @@ int main() {
     string str = "welclew";  // Example string to check
     palindrome(str);  // Call the palindrome function
     return 0;  // End of main function
+}
+
+// Function to reverse a string
+#include <iostream>
+using namespace std;
+void rev(string str) {
+    int length = str.length();  // Find the length of the string
+    // Loop to swap characters from start to end
+    for (int i = 0; i < length / 2; ++i) {
+        char temp = str[i];  // Store the current character in a temporary variable
+        str[i] = str[length - i - 1];  // Swap the current character with the corresponding character from the end
+        str[length - i - 1] = temp;  // Complete the swap
+    }
+    // Print the reversed string
+    for (int i = 0; i < length; ++i) {
+        cout << str[i];         // emoclew
+    }
+}
+
+int main() {
+    string str = "welcome";  // Define a sample string to reverse
+    rev(str);  // Call the reverse function
+    return 0;
 }
