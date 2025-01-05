@@ -1,33 +1,36 @@
+
 // overloading 
 #include <iostream>
 using namespace std;
-void sum(int a, char b)
-{
-    cout<<a<<endl;
+
+void sum(int a, char b) {
+    cout << a << endl;  // When the first parameter is an integer and the second is a character, it just prints the integer value
 }
-void sum(char a, int b)
-{
-    cout<<b<<endl<<a;
+
+void sum(char a, int b) {
+    cout << b << endl << a;  // When the first parameter is a character and the second is an integer, it prints the integer and then the character
 }
-int main (){
-    sum(10, 'a');
-    sum('b', 3);
+
+int main() {
+    sum(10, 'a');  // Calls the first function with an integer and a character (prints: 10)
+    sum('b', 3);   // Calls the second function with a character and an integer (prints: 3 b)
 }
+
 
 // Recursion 
 #include <iostream>
 using namespace std;
-int sum(int n)
-    {
-        if(n<=1)
-    {
-        return n;        // base condition for break in recursion
+
+int sum(int n) {
+    if (n <= 1) {  // Base condition: when n is 1 or less, we return n (this stops the recursion)
+        return n;
     }
-    return n +sum(n-1);      // sum of numbers
-  // return n * sum(n-1);    // factorial of number 
+    return n + sum(n - 1);  // Add the current number 'n' to the sum of the numbers from (n-1)
+    // If we change it to: return n * sum(n - 1); // This would calculate the factorial of 'n' (n! = n * (n-1) * ... * 1)
 }
-int main (){
-    cout<< sum(10);
+
+int main() {
+    cout << sum(10);  // Prints the sum of numbers from 1 to 10 (output: 55)
 }
 
 // fibonaci series 

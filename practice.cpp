@@ -135,7 +135,7 @@
 //     }
 // }
 
-// // anagram
+// anagram
 // #include <iostream>
 // using namespace std;
 // int main(){
@@ -158,7 +158,7 @@
 //         }
 //         if(!found){
 //             cout<<"not anagram";
-                // return 0;
+//                 return 0;
 //         }
 //     }
 //         cout<<"anagram";
@@ -174,7 +174,7 @@ int main(){
     int squ=0;
     for(int i=0;i<str.length();++i){
         if(str[i]=='{'){
-            par++;
+            cur++;
         }
         else if(str[i]=='('){
             par++;
