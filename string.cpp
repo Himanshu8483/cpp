@@ -1,3 +1,4 @@
+
 // string length 
 #include <iostream>
 using namespace std;
@@ -139,26 +140,26 @@ using namespace std;
 
 int main() {
     string str = "[{()}]";  // Input string with parentheses
-    int cur = 0;  // Counter for curly braces `{ }`
-    int par = 0;  // Counter for round braces `( )`
+    int par = 0;  // Counter for curly braces `{ }`
+    int cur = 0;  // Counter for round braces `( )`
     int squ = 0;  // Counter for square brackets `[ ]`
     
     // Loop through each character in the string
     for(int i = 0; i < str.length(); ++i) {
         // Count the opening brackets and braces
         if(str[i] == '{') {
-            cur++;  // Increase counter for `{`
+            par++;  // Increase counter for `{`
         } else if(str[i] == '(') {
-            par++;  // Increase counter for `(`
+            cur++;  // Increase counter for `(`
         } else if(str[i] == '[') {
             squ++;  // Increase counter for `[`
         }
         
         // Count the closing brackets and braces
         else if(str[i] == '}') {
-            cur--;  // Decrease counter for `}`
+            par--;  // Decrease counter for `}`
         } else if(str[i] == ')') {
-            par--;  // Decrease counter for `)`
+            cur--;  // Decrease counter for `)`
         } else if(str[i] == ']') {
             squ--;  // Decrease counter for `]`
         }
@@ -177,3 +178,5 @@ int main() {
         cout << "Not valid";  // Print "Not valid" if any counter is non-zero
     }
 }
+
+

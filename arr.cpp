@@ -115,7 +115,7 @@ int main() {
 // duplicate value find only near it (not proper result)
     for(int i=0;i<5;++i) {
         if(arr[i]==arr[i+1])
-                cout<< arr[i] << " ";  // 17 63 22 30
+                cout<< arr[i] << " ";  // 63
     }
 
     int arr[]={82,82,63,82,62, 62, 22,};
@@ -176,34 +176,47 @@ int main() {
 // Find the maximum 3 value
 #include <iostream>
 using namespace std;
+
 int main() {
-    int arr[] = {103, 78, 63, 22, 78};
-    int max1 = 0;
-    int max2 = 0;
-    int max3 = 0;
+    int arr[] = {103, 623, 623, 22, 728};  // Array of 5 numbers
+
+    // Bubble sort in descending order
     for (int i = 0; i < 5; ++i) {
-        for (int j = 0; j < 5; ++j) {
-            if (arr[j] > max1) {
-                max1 = arr[j];
-            }
-            else if (arr[j] > max2 && arr[j] < max1) {
-                max2 = arr[j];
-            }
-            else if (arr[j] > max3 && arr[j] < max2) {
-                max3 = arr[j];
+        for (int j = i + 1; j < 5; ++j) {
+            if (arr[j] > arr[i]) {
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
             }
         }
     }
-    cout << "Maximum Value = " << max1 << endl;
-    cout << "Second Maximum Value = " << max2 << endl;
-    cout << "Third Maximum Value = " << max3 << endl;
+
+    // Print sorted array
+    cout << "Sorted Array: ";
+    for (int i = 0; i < 5; ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Print top 3 distinct values
+    int count = 0;
+    cout << "Top 3 distinct maximum values:" << endl;
+    for (int i = 0; i < 5 && count < 3; ++i) {
+        if (arr[i] != arr[i - 1]) {  // Skip duplicates
+            cout << arr[i] << endl;
+            count++;
+        }
+    }
+
+    return 0;
 }
+
 
 // Find the kth largest number for non duplicate value
 #include <iostream>
 using namespace std;
 int main() {
-    int arr[] = {103, 79, 63, 22, 78};
+    int arr[] = {100, 70, 90, 50, 80};
     int k=3;
     for(int i = 0; i < 5; ++i) {
         for (int j = i+1; j < 5; ++j) {
@@ -214,7 +227,7 @@ int main() {
             }
         }
     }
-        cout<<arr[k-1];
+    cout<<arr[k-1];
 }
 
 #include <iostream>
@@ -290,7 +303,7 @@ int main() {
         cout<<arr[i]<<" ";
     }
 
-// print zeros at last 
+// print zeros at last or remove 
     int arr[]= {1,0,3,2,0};
     int j= 0;
     for (int i=0;i<5; ++i)
