@@ -99,33 +99,43 @@ int main() {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// 23:48 Encapsulation
-// Encapsulation is the process of bundling data (variables) and methods (functions) that operate on the data into a single unit or class. Restricting direct access to the data to ensure better control and security.
-// It hides the internal details and protects the data from outside interference and misuse.
+// Encapsulation:
+// Definition: Encapsulation is about bundling data (variables) and methods (functions) that operate on the data into a single unit (class) and restricting direct access to some of the object’s components.
+// Purpose: To protect data and enforce controlled access using getters and setters.
+// Achieved By:
+// Using access specifiers (private, protected, public).
+// Example of Encapsulation:
+// Imagine the same car. The engine is a private part of the car and cannot be accessed directly. You can only control it via public methods like pressing the start button.
+#include <iostream>
+using namespace std;
 
-class EncapsulationExample {
+class Car {
 private:
-    int value;  // Private variable (Cannot be accessed directly outside the class)
+    int speed; // Private variable (Cannot be accessed directly outside the class)
 
 public:
-    void setValue(int v) {  // Setter (public method to set the value)
-        value = v;
+    // Setter for speed (controlled access)
+    void setSpeed(int s) {      // Setter (public method to set the value)
+        if (s >= 0) { // Validating speed
+            speed = s;
+        }
     }
-    int getValue() {  // Getter (public method to get the value)
-        return value;
+
+    // Getter for speed (read-only access)
+    int getSpeed() {        // Getter (public method to get the value)
+        return speed;
     }
 };
 // Getter: A method used to retrieve the value of a private variable.
 // Setter: A method used to set or update the value of a private variable.
 int main() {
-    EncapsulationExample obj; // Creating an object of the class
-    // Using the setter to set a value
-    obj.setValue(42);
-    // Using the getter to retrieve the value
-    cout << "The value is: " << obj.getValue() << endl;
+    Car myCar;
+
+    myCar.setSpeed(50); // Setting speed through a public method
+    cout << "Speed: " << myCar.getSpeed() << " km/h" << endl;
+
     return 0;
 }
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // 29:10 Constructor
@@ -544,94 +554,150 @@ int main() {
 // Hybrid Inheritance: A mix of multiple types of inheritance, demonstrating the most complex relationships.
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// 1:35:10 Polymorphism
-// Polymorphism allows one interface to be used for different data types. It comes in two forms:
-// 1. Function Overloading: Same function name, but different parameter types or number of parameters.
-// 2. Function Overriding: Inherited function with a new implementation in the derived class.
+// Polymorphism
+// Polymorphism in C++ is a concept that allows a single function, operator, or method to behave differently based on the context. It simplifies programming and improves code flexibility. Let's break it down into simple points with examples:
+// Types of Polymorphism
+// Compile-Time Polymorphism (Static Binding):
 
-class PolymorphismExample {
+// Achieved using function overloading and operator overloading.
+// Decided at compile-time.
+// Runtime Polymorphism (Dynamic Binding):
+
+// Achieved using virtual functions.
+// Decided at runtime.
+// Examples of Polymorphism:
+#include <iostream>
+using namespace std;
+
+// Function Overloading (Compile-time Polymorphism)
+// Definition: Multiple functions with the same name but different parameters.
+
+class Calculator {
 public:
-    void show() {
-        cout << "No arguments." << endl;
+    int add(int a, int b) {
+        return a + b; // Adds two integers
     }
 
-    void show(int x) {
-        cout << "Integer argument: " << x << endl;
-    }
-};
-
-// Function Overriding and Virtual Function
-// Virtual function is used to override a base class function in a derived class.
-
-// Base class: Animal
-class Animal {
-public:
-    virtual void makeSound() {  // Virtual function (can be overridden)
-        cout << "Some generic animal sound!" << endl;
-    }
-};
-
-// Derived class: Dog
-class Dog : public Animal {
-public:
-    void makeSound() override {  // Override the base class function
-        cout << "Woof! Woof!" << endl;
+    double add(double a, double b) {
+        return a + b; // Adds two doubles
     }
 };
 
-// Derived class: Cat
-class Cat : public Animal {
+// Operator Overloading (Compile-Time Polymorphism)
+// Definition: Overloading operators like +, -, etc., for custom types.
+
+class Number {
+private:
+    int value;
+
 public:
-    void makeSound() override {  // Override the base class function
-        cout << "Meow! Meow!" << endl;
+    Number(int v = 0) : value(v) {}
+
+    Number operator+(const Number& n) {
+        return Number(value + n.value); // Adds the values of two Number objects
+    }
+
+    void display() {
+        cout << "Value: " << value << endl; // Displays the value
+    }
+};
+
+// Runtime Polymorphism (Dynamic Binding)
+// Definition: A base class pointer or reference calls a function that is overridden in a derived class.
+
+class Shape {
+public:
+    virtual void draw() {
+        cout << "Drawing a shape" << endl; // Base class implementation
+    }
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a circle" << endl; // Derived class implementation
+    }
+};
+
+class Rectangle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a rectangle" << endl; // Derived class implementation
     }
 };
 
 int main() {
-    Animal *animal;  // Pointer to base class
+    // Function Overloading Example
+    Calculator calc;
+    cout << "Addition (int): " << calc.add(5, 10) << " // Output: 15" << endl;
+    cout << "Addition (double): " << calc.add(5.5, 10.5) << " // Output: 16" << endl;
 
-    Dog dog;    // Create a Dog object
-    Cat cat;    // Create a Cat object
+    // Operator Overloading Example
+    Number n1(10), n2(20);
+    Number n3 = n1 + n2;
+    cout << "Number Addition: ";
+    n3.display(); // Output: Value: 30
 
-    animal = &dog;       // Point to the Dog object
-    animal->makeSound(); // Output: Woof! Woof! (Dog's version)
+    // Runtime Polymorphism Example
+    Shape* shape1 = new Circle();
+    Shape* shape2 = new Rectangle();
 
-    animal = &cat;       // Point to the Cat object
-    animal->makeSound(); // Output: Meow! Meow! (Cat's version)
+    shape1->draw(); // Output: Drawing a circle
+    shape2->draw(); // Output: Drawing a rectangle
+
+    delete shape1;
+    delete shape2;
 
     return 0;
 }
-	// Pointer (*): Stores the address of an object (e.g., Animal *animal = &dog;).
-	// Dereference (->): Used to access members of the object via its pointer.
-	// Polymorphism:
-	// Compile-Time: Function overloading (same name, different parameters).
-	// Runtime: Virtual functions, where the function called depends on the actual object type at runtime.
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+// Abstraction:
+// Definition: Abstraction focuses on hiding the complex implementation and showing only the essential details to the user.
+// Purpose: To reduce complexity by exposing only what’s necessary for the user.
+// Achieved By:
+// Abstract classes
+// Interfaces
+// Virtual functions (in C++)
+// Example of Abstraction:
+// Imagine a car. As a driver, you just need to know how to start the car, press the accelerator, and apply brakes. You don’t need to know the internal working of the engine.
+#include <iostream>
+using namespace std;
 
-// 1:49:58 Abstract Class
+// Abstract Class
 // Abstract class is a class with at least one pure virtual function. It cannot be instantiated, but it can be inherited.
 // The derived class must provide implementations for the pure virtual functions.
-
-class AbstractExample {
+class Vehicle {
 public:
-    virtual void display() = 0;  // Pure virtual function, making the class abstract
+    virtual void startEngine() = 0; // Pure virtual function (no implementation here)
 };
 
-class ConcreteExample : public AbstractExample {
+class Car : public Vehicle {
 public:
-    void display() override {  // Concrete implementation of the abstract method
-        cout << "Concrete implementation." << endl;
+    void startEngine() override {
+        cout << "Engine started!" << endl; // Implementation specific to Car
     }
 };
+
 int main() {
-    ConcreteExample obj;  // Create an object of the derived class
-    obj.display();        // Calls the overridden display() function
+    Vehicle* myCar = new Car(); // Create a Car object
+    myCar->startEngine();       // Call the abstracted method
     return 0;
 }
-// Note: The abstract class acts as a blueprint, defining that any derived class must implement the display() function.
-// The derived class (ConcreteExample) fulfills this requirement by providing its own version of display().
+
+// Note: The abstract class acts as a blueprint, defining that any derived class must implement the startEngine() function.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+// Difference Table: Abstraction vs Encapsulation
+// ---------------------------------------------
+// | Aspect         | Abstraction                         | Encapsulation                         |
+// |----------------|-------------------------------------|---------------------------------------|
+// | Focus          | Hiding implementation details.      | Hiding internal data.                 |
+// | Purpose        | To show only essential features.    | To protect data and maintain control. |
+// | How It’s Achieved | Abstract classes, interfaces, virtual methods. | Access specifiers (private, public). |
+// | Example        | A car’s controls (start, stop, accelerate). | A car’s engine (hidden, controlled via buttons). |
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // In Object-Oriented Programming (OOP), the static keyword is used to define members (variables or methods) that are shared among all instances of a class rather than being specific to each object. Here’s how the static keyword is typically used:
 
