@@ -1,17 +1,20 @@
-#include <iostream>
-using namespace std;
+// Pointer (*): A variable that stores the memory address of another variable.
+// Arrow Operator (->): Used to access members of an object through a pointer.
+// This Pointer (this): Refers to the current object of the class inside a member function.
+// Address-of Operator (&): Used to obtain the memory address of a variable.
+// Dot Operator (.): Used to access members of an object directly (without a pointer).
 
-// 00:00 Introduction
+// Introduction:
 // Object-Oriented Programming (OOP) makes it easier to write, understand, and maintain code by using concepts like classes, objects, inheritance, polymorphism, encapsulation, and abstraction. These concepts make code more modular, reusable, and easier to manage.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// 01:26 OOP Principles
+// OOP Principles
 // OOP has four main principles: Encapsulation, Abstraction, Inheritance, and Polymorphism.
 
-// 03:38 Class & Object
+// Class & Object
 // A class is a blueprint for creating objects (instances of that class). 
 // An object is a real-world entity that is created from a class. It contains data and methods to perform operations.
+#include <iostream>
+using namespace std;
 
 class Student {
 public:
@@ -28,18 +31,16 @@ int main() {
     student1.name = "Himanshu";  // Assigning values
     student1.age = 20;       // Assigning values
     student1.display();      // Calling the display method to show data
-
     return 0;
 }
 
-// 17:05 Access Specifier
+// Access Specifier
 // Access specifiers control access to the class members (variables and methods).
 // 1. Public: Accessible from anywhere (within the class, outside the class, and in derived classes).
 // 2. Private: Accessible only within the class (cannot be accessed from outside the class directly).
 // 3. Protected: Accessible within the class and derived (child) classes, but not outside.
 #include <iostream>
 using namespace std;
-
 class Example {
 public:
     int publicVar; // Public: Accessible from anywhere
@@ -94,6 +95,7 @@ int main() {
 // Public: 10, Private: 20, Protected: 30
 // Public: 40, Private: 50, Protected: 60
 // Accessing protectedVar in Derived class: 60
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -631,92 +633,153 @@ int main() {
 // Note: The abstract class acts as a blueprint, defining that any derived class must implement the display() function.
 // The derived class (ConcreteExample) fulfills this requirement by providing its own version of display().
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+// In Object-Oriented Programming (OOP), the static keyword is used to define members (variables or methods) that are shared among all instances of a class rather than being specific to each object. Here’s how the static keyword is typically used:
 
-// 1:55:15 Static Keyword
-// A static variable is shared by all instances of a class. It retains its value even if no object of the class is created.
-// A static function can be called without an object, and it can only access static members of the class.
+// Static Variables:
+// A static variable is shared by all objects of the class. It retains its value even if no objects of the class exist.
+// It is initialized only once, at the start of the program.
+// It is accessed using the class name (e.g., ClassName::variable), not through an instance.
+// Example:
 
+class MyClass {
+public:
+    static int count; // static variable
+    
+    MyClass() {
+        count++;
+    }
+};
+
+// Define and initialize the static variable `count` outside the class using the scope resolution operator (::)
+int MyClass::count = 0;     // It is essential for providing memory and initializing the static variable outside the class definition. 
+
+int main() {
+    MyClass obj1;
+    MyClass obj2;
+    cout << "Count: " << MyClass::count << endl; // Output will be 2
+    return 0;
+}
+
+// Static Methods:
+
+// A static method belongs to the class rather than any specific instance. It can be called without creating an object of the class.
+// It can only access static variables or other static methods, as it doesn't have access to instance-specific data.
+// Example:
+
+class MyClass {
+public:
+    static void displayMessage() {
+        cout << "This is a static method!" << endl;
+    }
+};
+
+int main() {
+    MyClass::displayMessage(); // Can be called without creating an object
+    return 0;
+}
+// Summary:
+// Static variables are shared between all objects and are initialized only once.
+// Static methods can be called without creating objects and work only with static members.
+
+
+// Here’s a mixed example demonstrating the use of both static variables and static methods along with instance-specific (non-static) variables and methods.
+
+// Student Grade Management System:
+// Suppose we want to keep track of the total number of students in a class and calculate grades for individual students.
+
+// Example:
 #include <iostream>
 using namespace std;
 
-class StaticExample {
-public:
-    static int count;  // Static variable
+class Student {
+private:
+    string name;     // Non-static: unique to each student
+    int marks;       // Non-static: unique to each student
 
-    StaticExample() {
-        count++;  // Increment the static variable every time an object is created
+public:
+    static int totalStudents; // Static: shared by all students
+
+    // Constructor to initialize student details
+    Student(string studentName, int studentMarks) {
+        name = studentName;
+        marks = studentMarks;
+        totalStudents++; // Increment total students when a new student is created
     }
 
-    static void displayCount() {  // Static function
-        cout << "Count: " << count << endl;
+    // Static method to display total number of students
+    static void displayTotalStudents() {
+        cout << "Total Students: " << totalStudents << endl;
+    }
+
+    // Non-static method to display student details
+    void displayStudentDetails() {
+        cout << "Name: " << name << ", Marks: " << marks << endl;
+    }
+
+    // Static method to calculate grade based on marks
+    static char calculateGrade(int marks) {
+        if (marks >= 90) return 'A';
+        if (marks >= 75) return 'B';
+        if (marks >= 50) return 'C';
+        return 'F';
+    }
+
+    // Method to display student's grade
+    void displayGrade() {
+        cout << "Grade: " << calculateGrade(marks) << endl;
     }
 };
 
 // Initialize the static variable outside the class
-int StaticExample::count = 0;       // It is essential for providing memory and initializing the static variable outside the class definition.
+int Student::totalStudents = 0;
 
 int main() {
-    StaticExample obj1;  // First object created
-    StaticExample obj2;  // Second object created
-    StaticExample obj3;  // Third object created
+    // Create student objects
+    Student student1("Alice", 85);
+    Student student2("Bob", 92);
+    Student student3("Charlie", 47);
 
-    // Display the count using the class name
-    StaticExample::displayCount();
+    // Display individual student details
+    student1.displayStudentDetails();
+    student1.displayGrade();
+
+    student2.displayStudentDetails();
+    student2.displayGrade();
+
+    student3.displayStudentDetails();
+    student3.displayGrade();
+
+    // Use the static method to display total students
+    Student::displayTotalStudents();
+
+    // Use the static method directly to calculate grade for a specific marks
+    cout << "Grade for 76 marks: " << Student::calculateGrade(76) << endl;
 
     return 0;
 }
-// Output: Count: 3
 
-#include <iostream>
-using namespace std;
+// Explanation:
 
-// Class to represent a bank with a static amount shared by all objects of the class
-class Bank {
-    public:
-        // Static member variable (shared by all objects of the class)
-        static int amount;
+// Static Variable:
+// totalStudents keeps track of how many students have been created and is shared among all instances of the Student class.
+// It is updated whenever a new student is created.
 
-        // Static member function that modifies the static variable `amount` by subtraction
-        static void showamount(int x) {
-            amount -= x; // Decrease the static variable `amount` by `x`
-            cout << "amount = " << amount << endl; // Print the updated value of `amount`
-        }
+// Static Methods:
+// displayTotalStudents shows the total number of students. It doesn’t depend on any individual student.
+// calculateGrade computes the grade based on marks and is reusable without needing to reference any specific student object.
 
-        // Static member function to reset the amount back to 10 for each object if needed
-        static void resetAmount() {
-            amount = 10; // Reset the amount to 10
-        }
-};
-
-// Define and initialize the static variable `amount` outside the class using the scope resolution operator (::)
-// This sets the initial amount to 10
-int Bank::amount = 10; 
-
-int main() {
-    // Create the first object of class Bank
-    Bank obj1;
-    // Call the static function using obj1 and pass 2 to decrease the amount by 2
-    obj1.showamount(2);
-
-    cout << endl; // Adding a line break for better readability
-
-    // Reset the amount back to 10 before creating the second object
-    Bank::resetAmount();
-
-    // Create the second object of class Bank
-    Bank obj2;
-    // Call the static function using obj2 and pass 4 to decrease the amount by 4
-    obj2.showamount(4); 
-
-    // Call the static function directly using the class name and pass 3 to decrease the amount by 3
-    Bank::showamount(3);
-
-    return 0;
-}
-// Output :
-// amount = 8
-// amount = 6
-// amount = 3
+// Non-Static Members:
+// Each student has a name and marks, which are unique to that specific student.
+// Methods like displayStudentDetails and displayGrade work with instance-specific data.
+// Output:
+// Name: Alice, Marks: 85
+// Grade: B
+// Name: Bob, Marks: 92
+// Grade: A
+// Name: Charlie, Marks: 47
+// Grade: F
+// Total Students: 3
+// Grade for 76 marks: B
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
