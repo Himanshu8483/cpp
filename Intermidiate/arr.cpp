@@ -1,4 +1,4 @@
-// int size = sizeof(arr) / sizeof(arr[0]);     // length of an array
+// int size = sizeof(arr) / sizeof(arr[0]);     // length of array
 
 // variable size
 #include <iostream>
