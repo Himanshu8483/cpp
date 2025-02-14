@@ -17,7 +17,7 @@ int main()
     cout<<numeric_limits<float>::max() ;
     }
 
-// Assignment Operator
+// Assignment Operators in C++
 #include <iostream>
 #include <limits>
 using namespace std;
