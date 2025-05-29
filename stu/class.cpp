@@ -13,7 +13,7 @@ int main() {
     cout << sizeof(a);  // Output the size of the object (1 byte)
 }
 
-/* Explanation for Example 1:
+/* Explanation of Example 1:
 - An empty class still takes some space in memory.
 - Even though there are no variables in the class, the object still has a size of 1 byte.
 */
