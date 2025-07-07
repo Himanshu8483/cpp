@@ -88,7 +88,25 @@ int fibo(int n){
     }
     return 0;
 }
+// Fibonacci function by Recursion
+#include <iostream>
+using namespace std;
+int fibo(int n) {
+    if(n<=1) return n;
+    return fibo(n - 1) + fibo(n - 2);
+}
 
+// int main() {
+// cout<<fibo(3);       // term print
+// }
+int main() {
+    int i=0;
+    int n=8;
+    while(i<=n){
+        cout<<fibo(i)<<" ";     // series print
+        i++;
+    }
+}
 
 
 
