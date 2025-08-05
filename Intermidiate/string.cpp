@@ -172,12 +172,4 @@ int main() {
             return 0;  // Exit the program
         }
     }
-    
-    // After the loop, check if all counters are back to zero
-    if(par == 0 && cur == 0 && squ == 0) {
-        cout << "valid";  // Print "valid" if all parentheses are correctly matched
-    } else {
-        cout << "Not valid";  // Print "Not valid" if any counter is non-zero
-    }
-}
 
