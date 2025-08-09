@@ -1,4 +1,4 @@
-// string length 
+// string length find
 #include <iostream>
 using namespace std;
 int main() { 
