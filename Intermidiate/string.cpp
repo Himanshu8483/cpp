@@ -1,3 +1,11 @@
+// string length
+
+#include <iostream>
+using namespace std;
+int main() { 
+    string str = "welcome ";
+    cout << str.length();  // Output: 7 
+}
 
 // Pallindrome check without using function 
 #include <iostream>
