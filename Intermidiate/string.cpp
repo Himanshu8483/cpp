@@ -22,6 +22,12 @@ int main() {
     return 0;  // End of program
 }
 
+
+
+
+
+
+
 // Pallindrome check with function dynamically
 #include <iostream>
 using namespace std;
