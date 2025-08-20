@@ -1,4 +1,4 @@
-// string length find
+// string length
 
 
 
