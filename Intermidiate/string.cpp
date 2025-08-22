@@ -1,9 +1,7 @@
 
 
 
-// string length
-
-
+// string length find 
 
 
 #include <iostream>
